@@ -153,3 +153,33 @@ When presenting to evaluators:
 
 3. **Why is recall ~99.2% while precision is ~85%?**
    - On multi-lane highways and dual carriageways, ground truth routes sometimes omit parallel turn-bays or service ramps, or GPS points continue recorded during pre-trip idling. Our blip smoothing eliminates transient jitters, capturing almost 100% of the true traversed corridors.
+
+---
+
+## 💻 Two-Laptop Hackathon Evaluation Setup (Mandatory)
+
+Per the official Hackathon Guidelines:
+- **Laptop 1 (Model Inference Server)**: Runs the FastAPI backend, holds the road network and reference evaluation routes.
+- **Laptop 2 (Evaluator User Interface)**: Runs the Evaluator Web UI, displays the 10 evaluation trip options, sends inference requests via HTTP, and renders the live predictions and server-calculated metrics.
+
+### Step 1: On Laptop 1 (Model Server)
+Make sure both laptops are on the same Wi-Fi or mobile hotspot.
+```bash
+./start_laptop1_api.sh
+# Or directly:
+uvicorn api.server:app --host 0.0.0.0 --port 8000
+```
+*Laptop 1 will print its local network IP (e.g., `http://192.168.1.15:8000`). Evaluators will observe live inference logs here!*
+
+### Step 2: On Laptop 2 (Evaluator UI)
+```bash
+./start_laptop2_ui.sh
+# Or simply open:
+# dashboard/index.html in Google Chrome or any modern browser!
+```
+1. Enter Laptop 1's IP in the top input box (e.g. `http://192.168.1.15:8000`) and click **Ping**.
+2. Select any of the **10 Reserved Evaluation Trips** from the dropdown (`00000000`, `00000007`, ..., `00000091`).
+3. Click **🚀 Send Inference to Laptop 1**.
+4. The request hits Laptop 1 live, prints logs in the terminal, and Laptop 2 renders the map and metrics in real-time!
+
+---
