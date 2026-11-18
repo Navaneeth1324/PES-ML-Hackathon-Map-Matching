@@ -1,0 +1,22 @@
+# Large raw media and dataset files (auto-downloaded in Colab/pipeline)
+Student folder/
+*.zip
+*.mp4
+video_frames/
+video_frames_detailed/
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
