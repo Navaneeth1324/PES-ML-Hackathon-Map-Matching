@@ -1,6 +1,6 @@
 # GraphMapMatch: High-Precision HMM Map Matching for GPS Trajectories
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17xtW2tvtrZyOK7H0gWQA8hekz0jQ937W)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Navaneeth1324/PES-ML-Hackathon-Map-Matching/blob/main/Map_Matching_ML_Hackathon.ipynb)
 
 A production-grade, ultra-fast **Hidden Markov Model (HMM) Map Matching Engine** designed for recovering ground-truth vehicle trajectories from noisy GPS data over directed road network graphs. Built for the **PES University CSE ML Hackathon**.
 
